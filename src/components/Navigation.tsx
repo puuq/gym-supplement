@@ -17,7 +17,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-foreground hover:text-accent transition-colors">
-            EliteSupps
+            Yushu
           </Link>
 
           {/* Navigation Items */}

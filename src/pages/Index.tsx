@@ -47,7 +47,7 @@ const Index = () => {
           <div className="space-y-8">
             <div className="inline-block">
               <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full">
-                #1 Supplement in the world
+                #1 Supplement Store in the world
               </span>
             </div>
             
@@ -81,9 +81,9 @@ const Index = () => {
               <Button variant="hero" size="lg" className="text-lg px-8">
                 Shop Now
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              {/* <Button variant="outline" size="lg" className="text-lg px-8">
                 ▶ Play Video
-              </Button>
+              </Button> */}
             </div>
           </div>
 
