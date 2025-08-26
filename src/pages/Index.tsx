@@ -3,7 +3,17 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-supplements.jpg";
+// Import Swiper modules at the top
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+
+// Import your slider images
+import slider1 from "@/assets/slider1.png";
+import slider2 from "@/assets/slider2.png";
+import slider3 from "@/assets/slider3.png";
+
 
 const Index = () => {
   const features = [
@@ -47,7 +57,7 @@ const Index = () => {
           <div className="space-y-8">
             <div className="inline-block">
               <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full">
-                #1 Supplement Store in the world
+                #1 Supplement Store in Nepal
               </span>
             </div>
             
@@ -60,18 +70,17 @@ const Index = () => {
             </h1>
             
             <p className="text-lg text-muted-foreground max-w-lg">
-              Nutritional supplements filled with 33 ingredients, all 
-              working together to support your strength and health.
+              Curated supplements from the world’s top brands  chosen for those who demand elite strength, performance, and recovery.
             </p>
 
             {/* Testimonial */}
             <div className="flex items-center space-x-4 bg-muted/50 rounded-lg p-4 max-w-md">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground text-sm">★</span>
+                <span className="text-primary-foreground text-lg">★</span>
               </div>
               <div>
                 <p className="text-sm font-medium text-foreground">
-                  "After using EliteSupps, I felt like I had become superhuman."
+                  “Yushu introduced me to premium brands I never knew I needed.”
                 </p>
               </div>
             </div>
@@ -89,16 +98,36 @@ const Index = () => {
 
           {/* Right Content - Hero Image */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-accent opacity-20 rounded-3xl transform rotate-6"></div>
-            <img 
-              src={heroImage} 
-              alt="Premium supplement bottles" 
-              className="relative z-10 w-full h-auto rounded-3xl shadow-premium"
-            />
-            {/* Floating Elements */}
-            <div className="absolute top-10 -left-4 w-8 h-8 bg-accent rounded-full animate-pulse"></div>
-            <div className="absolute top-32 -right-6 w-6 h-6 bg-accent/60 rounded-full animate-pulse delay-300"></div>
-            <div className="absolute bottom-20 -left-8 w-4 h-4 bg-accent/80 rounded-full animate-pulse delay-700"></div>
+            <Swiper
+              effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={window.innerWidth < 768 ? 1.2 : 2.5}
+              loop={true}
+              autoplay={{ delay: 3000 }}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2.5,
+                slideShadows: false,
+              }}
+              modules={[EffectCoverflow, Autoplay]}
+              className="mySwiper w-full h-[400px] md:h-[500px]"
+            >
+              {[slider1, slider2, slider3].map((img, idx) => (
+                <SwiperSlide
+                  key={idx}
+                  className="flex justify-center items-center"
+                >
+                  <img
+                    src={img}
+                    alt={`Supplement ${idx + 1}`}
+                    className="rounded-2xl shadow-xl w-[250px] md:w-[300px] object-contain"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </div>

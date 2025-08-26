@@ -113,3 +113,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-slide {
+  transition: transform 0.3s ease;
+}
