@@ -59,7 +59,7 @@ const About = () => {
         </div>
 
         {/* Mission Statement */}
-        <div className="bg-gradient-hero rounded-2xl p-12 mb-16 text-center shadow-premium">
+        <div className="bg-gradient-hero rounded-2xl p-12 mb-16 text-center shadow-glow cursor-pointer">
           <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             To revolutionize sports nutrition by creating premium-grade supplements that empower 
@@ -71,7 +71,7 @@ const About = () => {
         {/* Core Values */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center text-foreground mb-12">Core Values</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8  cursor-pointer">
             {values.map((value, index) => (
               <Card key={index} className="text-center border-2 hover:border-accent hover:shadow-premium transition-all duration-300">
                 <CardHeader>

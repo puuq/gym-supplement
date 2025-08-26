@@ -36,7 +36,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link to="/" className="text-2xl font-bold mb-4 block">
-              EliteSupps
+              Yushu Supplement
             </Link>
             <p className="text-primary-foreground/80 mb-6 max-w-sm">
               Premium-grade supplements designed for athletes and performance enthusiasts who demand excellence.
@@ -46,7 +46,7 @@ const Footer = () => {
                 <span className="text-xs">f</span>
               </div>
               <div className="w-8 h-8 bg-primary-foreground/20 rounded-full flex items-center justify-center hover:bg-primary-foreground/30 transition-colors cursor-pointer">
-                <span className="text-xs">t</span>
+                <span className="text-xs">x</span>
               </div>
               <div className="w-8 h-8 bg-primary-foreground/20 rounded-full flex items-center justify-center hover:bg-primary-foreground/30 transition-colors cursor-pointer">
                 <span className="text-xs">in</span>
