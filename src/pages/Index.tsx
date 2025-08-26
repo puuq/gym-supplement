@@ -3,17 +3,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-// Import Swiper modules at the top
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 
-// Import your slider images
 import slider1 from "@/assets/slider1.png";
 import slider2 from "@/assets/slider2.png";
-import slider3 from "@/assets/slider3.png";
-
+import handImage from "@/assets/hand.png";
 
 const Index = () => {
   const features = [
@@ -35,99 +28,68 @@ const Index = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "After using EliteSupps, I feel like I had become superhuman.",
-      role: "Professional Athlete"
-    },
-    {
-      name: "The quality and results are unmatched in the industry.",
-      role: "Certified Trainer"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px]">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <div className="inline-block">
-              <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full">
-                #1 Supplement Store in Nepal
-              </span>
-            </div>
-            
+      <div className="container mx-auto px-6 py-20 relative min-h-[600px]">
+        <div className="grid lg:grid-cols-2 gap-12 items-center relative">
+          {/* Left - Product Images */}
+          <div className="relative w-full h-full min-h-[400px]">
+            <img
+              src={slider1}
+              alt="Bottle 1"
+              className="absolute z-10 w-36 md:w-40 top-24 left-4 rotate-[-10deg] drop-shadow-xl"
+            />
+            <img
+              src={slider2}
+              alt="Bottle 2"
+              className="absolute z-0 w-32 md:w-36 top-28 left-28 rotate-[15deg] drop-shadow-md"
+            />
+            {/* 👉 HAND IMAGE GOES HERE */}
+            <img
+              src={handImage}
+              alt="Hand"
+              className="absolute bottom-4 -left-12 w-80 md:w-[420px] opacity-90 pointer-events-none"
+            />
+
+          </div>
+
+
+          {/* Right - Content */}
+          <div className="space-y-6">
+            <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full inline-block">
+              #1 Supplement Store in Nepal
+            </span>
+
             <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-              All-in-one
-              <br />
-              <span className="text-accent">Supplement</span> for
-              <br />
+              All-in-one <br />
+              <span className="text-accent">Supplement</span> for <br />
               Your Strength
             </h1>
-            
-            <p className="text-lg text-muted-foreground max-w-lg">
-              Curated supplements from the world’s top brands  chosen for those who demand elite strength, performance, and recovery.
+
+            <p className="text-lg text-muted-foreground max-w-xl">
+              Curated supplements from the world’s top brands — chosen for those who demand elite strength, performance, and recovery.
             </p>
 
-            {/* Testimonial */}
-            <div className="flex items-center space-x-4 bg-muted/50 rounded-lg p-4 max-w-md">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground text-lg">★</span>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-foreground">
-                  “Yushu introduced me to premium brands I never knew I needed.”
-                </p>
-              </div>
+            {/* Testimonial Box */}
+            <div className="flex items-center gap-4 bg-muted/60 px-4 py-3 rounded-xl shadow-sm max-w-md">
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">★</div>
+              <p className="text-sm">
+                “Yushu introduced me to premium brands I never knew I needed.”
+              </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex gap-4 pt-4">
               <Button variant="hero" size="lg" className="text-lg px-8">
                 Shop Now
               </Button>
-              {/* <Button variant="outline" size="lg" className="text-lg px-8">
+              <Button variant="outline" size="lg" className="text-lg px-8">
                 ▶ Play Video
-              </Button> */}
+              </Button>
             </div>
-          </div>
-
-          {/* Right Content - Hero Image */}
-          <div className="relative">
-            <Swiper
-              effect={'coverflow'}
-              grabCursor={true}
-              centeredSlides={true}
-              slidesPerView={window.innerWidth < 768 ? 1.2 : 2.5}
-              loop={true}
-              autoplay={{ delay: 3000 }}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2.5,
-                slideShadows: false,
-              }}
-              modules={[EffectCoverflow, Autoplay]}
-              className="mySwiper w-full h-[400px] md:h-[500px]"
-            >
-              {[slider1, slider2, slider3].map((img, idx) => (
-                <SwiperSlide
-                  key={idx}
-                  className="flex justify-center items-center"
-                >
-                  <img
-                    src={img}
-                    alt={`Supplement ${idx + 1}`}
-                    className="rounded-2xl shadow-xl w-[250px] md:w-[300px] object-contain"
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
           </div>
         </div>
       </div>
@@ -199,7 +161,6 @@ const Index = () => {
         </div>
       </div>
 
-      
       <Footer />
     </div>
   );
