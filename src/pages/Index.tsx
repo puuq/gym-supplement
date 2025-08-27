@@ -86,9 +86,9 @@ const Index = () => {
               <Button variant="hero" size="lg" className="text-lg px-8">
                 Shop Now
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              {/* <Button variant="outline" size="lg" className="text-lg px-8">
                 ▶ Play Video
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
