@@ -94,7 +94,7 @@ const Products = () => {
             Be the first to know about new product releases and exclusive offers.
           </p>
           <Button variant="hero" size="lg">
-            Subscribe to Newsletter
+            Subscribe for latest updates
           </Button>
         </div>
       </div>

@@ -33,26 +33,27 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-20 relative min-h-[600px]">
+      <div className="container mx-auto px-12 py-12 relative min-h-[600px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center relative">
           {/* Left - Product Images */}
-          <div className="relative w-full h-full min-h-[400px]">
-            <img
-              src={slider1}
-              alt="Bottle 1"
-              className="absolute z-10 w-36 md:w-40 top-24 left-4 rotate-[-10deg] drop-shadow-xl"
-            />
-            <img
-              src={slider2}
-              alt="Bottle 2"
-              className="absolute z-0 w-32 md:w-36 top-28 left-28 rotate-[15deg] drop-shadow-md"
-            />
+          <div className="relative w-full h-full min-h-[400px] hidden sm:block">
+          <img
+            src={slider1}
+            alt="Bottle 1"
+            className="absolute z-10 w-48 md:w-60 top-20 left-0 rotate-[-10deg] drop-shadow-xl"
+          />
+          <img
+            src={slider2}
+            alt="Bottle 2"
+            className="absolute z-0 w-44 md:w-56 top-24 left-32 rotate-[15deg] drop-shadow-md"
+          />
+
             {/* 👉 HAND IMAGE GOES HERE */}
-            <img
+            {/* <img
               src={handImage}
               alt="Hand"
               className="absolute bottom-4 -left-12 w-80 md:w-[420px] opacity-90 pointer-events-none"
-            />
+            /> */}
 
           </div>
 
@@ -95,10 +96,10 @@ const Index = () => {
       </div>
 
       {/* Features Section */}
-      <div className="bg-gradient-hero py-20">
+      <div className="bg-gradient-hero py-12">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Why Elite Athletes Choose Us</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6 underline">Why Elite Athletes Choose Us</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Experience the difference that premium quality and scientific excellence make in your performance journey.
             </p>
@@ -127,7 +128,7 @@ const Index = () => {
       {/* Product Showcase */}
       <div className="container mx-auto px-6 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Premium Product Line</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6 underline">Premium Product Line</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Each product is meticulously crafted to deliver uncompromising quality and results.
           </p>
